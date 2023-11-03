@@ -10,7 +10,7 @@ public class SecureArea {
     public SecureArea(WebDriver driver) {
         this.driver = driver;
     }
-    public String getAlertMsg(String msg){
+    public String getAlertMsg(){
         return driver.findElement(alertMsg).getText();
     }
 }

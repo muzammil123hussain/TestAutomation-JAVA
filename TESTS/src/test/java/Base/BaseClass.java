@@ -4,11 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.HomePage;
 
 import java.util.List;
 
 public class BaseClass {
     private WebDriver driver;
+    protected HomePage homePage;
     private final String URL = "https://the-internet.herokuapp.com/";
 
     public void SetUp(){
@@ -17,7 +19,7 @@ public class BaseClass {
         driver.get(URL);
         driver.manage().window().maximize();
         System.out.println(driver.getTitle());
-        exerciseOne();
+        homePage = new HomePage(driver);
         driver.quit();
     }
 

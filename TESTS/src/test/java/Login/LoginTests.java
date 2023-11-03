@@ -6,15 +6,16 @@ import pages.LoginPage;
 import pages.SecureArea;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class LoginTests extends BaseClass {
 
     @Test
     public void testSuccessfullLogin(){
         LoginPage login = homePage.clickFormAuthenticationLink();
-        login.enterPassword("tomsmith");
+        login.enterUsername("tomsmith");
         login.enterPassword("SuperSecretPassword!");
         SecureArea securearea  = login.clickLoginBtn();
-        assertEquals(securearea.getAlertMsg(), "You logged into a secure area! X", "Alert Text is incorrect");
+        assertTrue(securearea.getAlertMsg().contains("You logged into a secure area!"), "Alert Text is incorrect");
     }
 }

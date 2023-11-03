@@ -13,13 +13,12 @@ public class BaseClass {
 
     @BeforeClass
     public void SetUp(){
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/muzammil/Documents/practice/TestAutomation-JAVA/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get(URL);
         driver.manage().window().maximize();
         System.out.println(driver.getTitle());
         homePage = new HomePage(driver);
-        driver.quit();
     }
 
     @AfterClass

@@ -4,7 +4,7 @@ import Base.BaseClass;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
-public class HoverTest extends BaseClass {
+public class HoverTests extends BaseClass {
     @Test
     public void testHoverUser1 (){
         var hoverpage = homePage.clickHoverLink();

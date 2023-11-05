@@ -25,6 +25,10 @@ public class HomePage {
         clickLink("Horizontal Slider");
         return new SliderPage(driver);
     }
+    public AlertsPage clickAlertsLink(){
+        clickLink("JavaScript Alerts");
+        return new AlertsPage(driver);
+    }
     private void clickLink(String LinkTxt){
         driver.findElement(By.linkText(LinkTxt)).click();
     }

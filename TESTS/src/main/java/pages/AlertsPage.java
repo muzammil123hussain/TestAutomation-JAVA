@@ -36,4 +36,8 @@ public class AlertsPage {
     public String getResultTxt(){
         return driver.findElement(result).getText();
     }
+
+    public void sendKeysInAlert(String Text){
+        driver.switchTo().alert().sendKeys(Text);
+    }
 }

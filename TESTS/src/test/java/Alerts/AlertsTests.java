@@ -30,4 +30,13 @@ public class AlertsTests extends BaseClass {
         confirmAlert.clickAlertCancel();
         assertEquals(confirmAlert.getResultTxt(),"You clicked: Cancel","result text is not as expected");
     }
+    @Test
+    public void testJsPromptAlert(){
+        var promptAlert = homePage.clickAlertsLink();
+        promptAlert.clickTriggerPromptAlertButton();
+        assertEquals(promptAlert.getAlertTxt(),"I am a JS prompt","alert text is not as expected");
+        promptAlert.sendKeysInAlert("Muzammil Hussain");
+        promptAlert.clickAlertConfirm();
+        assertEquals(promptAlert.getResultTxt(),"You entered: Muzammil Hussain","result text is not as expected");
+    }
 }

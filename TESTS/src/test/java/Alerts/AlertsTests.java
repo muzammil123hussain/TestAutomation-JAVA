@@ -16,10 +16,18 @@ public class AlertsTests extends BaseClass {
     }
     @Test
     public void testJsOkConfirmAlert(){
-        var okAlert = homePage.clickAlertsLink();
-        okAlert.clickTriggerConfirmAlertButton();
-        assertEquals(okAlert.getAlertTxt(),"I am a JS Confirm","alert text is not as expected");
-        okAlert.clickAlertOk();
-        assertEquals(okAlert.getResultTxt(),"You clicked: Ok","result text is not as expected");
+        var confirmAlert = homePage.clickAlertsLink();
+        confirmAlert.clickTriggerConfirmAlertButton();
+        assertEquals(confirmAlert.getAlertTxt(),"I am a JS Confirm","alert text is not as expected");
+        confirmAlert.clickAlertConfirm();
+        assertEquals(confirmAlert.getResultTxt(),"You clicked: Ok","result text is not as expected");
+    }
+    @Test
+    public void testJsCancelConfirmAlert(){
+        var confirmAlert = homePage.clickAlertsLink();
+        confirmAlert.clickTriggerConfirmAlertButton();
+        assertEquals(confirmAlert.getAlertTxt(),"I am a JS Confirm","alert text is not as expected");
+        confirmAlert.clickAlertCancel();
+        assertEquals(confirmAlert.getResultTxt(),"You clicked: Cancel","result text is not as expected");
     }
 }

@@ -16,10 +16,14 @@ public class BaseClass {
     public void SetUp(){
         System.setProperty("webdriver.chrome.driver", "/home/muzammil/Documents/practice/TestAutomation-JAVA/resources/chromedriver");
         driver = new ChromeDriver();
-        driver.get(URL);
+        goHome();
         driver.manage().window().maximize();
         System.out.println(driver.getTitle());
         homePage = new HomePage(driver);
+    }
+    @BeforeMethod
+    public void goHome(){
+        driver.get(URL);
     }
 
     @AfterClass
